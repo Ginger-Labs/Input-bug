@@ -11,20 +11,25 @@ export default class Main extends Component {
     };
   }
 
+  input = null
+
   onPress() {
-    this.setState({
-      selection: {
-        start: 10,
-        end: 10
-      },
-      text: 'Large Text'
-    })
+    // this.setState({
+    //   selection: {
+    //     start: 10,
+    //     end: 10
+    //   },
+    //   text: 'Large Text'
+    // })
+    if (this.input != null) {
+      this.input.setNativeProps({ text: "hehehhehhehehhehe", selection: {start: 10, end: 10}})
+    }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <TextInput selection={this.state.selection} value={this.state.text} placeholder={'Say Something'} />
+        <TextInput ref={(ref) => this.input = ref} selection={this.state.selection} value={this.state.text} placeholder={'Say Something'} />
         <TouchableOpacity onPress={this.onPress.bind(this)} style={{
           marginTop: 16
         }} >
