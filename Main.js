@@ -19,21 +19,6 @@ export default class Main extends Component {
     }
   }
 
-<<<<<<< HEAD
-  input = null
-
-  onPress() {
-    // this.setState({
-    //   selection: {
-    //     start: 10,
-    //     end: 10
-    //   },
-    //   text: 'Large Text'
-    // })
-    if (this.input != null) {
-      this.input.setNativeProps({ text: "hehehhehhehehhehe", selection: {start: 10, end: 10}})
-    }
-=======
   resetText = () => {
     this.setState({
       selection: {
@@ -42,7 +27,6 @@ export default class Main extends Component {
       },
       text: 'Large Text'
     })
->>>>>>> break
   }
 
   onSelectionChange = evt => {
@@ -106,10 +90,6 @@ export default class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
-<<<<<<< HEAD
-        <TextInput ref={(ref) => this.input = ref} selection={this.state.selection} value={this.state.text} placeholder={'Say Something'} />
-        <TouchableOpacity onPress={this.onPress.bind(this)} style={{
-=======
         <TextInput 
           selection={this.state.selection}
           value={this.state.text}
@@ -123,7 +103,6 @@ export default class Main extends Component {
           autoFocus
         />
         <TouchableOpacity onPress={this.resetText} style={{
->>>>>>> break
           marginTop: 16
         }} >
           <Text>Click me</Text>
